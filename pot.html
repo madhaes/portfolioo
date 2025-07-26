@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhaeswaran | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <header class="bg-white shadow p-6 fade-in">
+    <h1 class="text-3xl font-bold">Madhaeswaran</h1>
+    <p class="text-sm text-gray-600">Aspiring AI/ML Engineer | B.E. CSE (2022–2026)</p>
+  </header>
+
+  <section class="p-6 fade-in">
+    <h2 class="text-xl font-semibold mb-2">Career Objective</h2>
+    <p class="text-gray-700">Curious and adaptable Computer Science graduate with a growing interest in AI and Machine Learning, and hands-on experience in problem-solving using Python, Java, C, and SQL. Looking to contribute to innovative, real-world projects in a collaborative team while continuously learning and evolving as a software professional.</p>
+  </section>
+
+  <section class="p-6 fade-in">
+    <h2 class="text-xl font-semibold mb-2">Skills</h2>
+    <ul class="list-disc list-inside">
+      <li>Python, Java, C, SQL</li>
+      <li>Data Structures and Algorithms</li>
+      <li>DBMS, Operating Systems</li>
+    </ul>
+  </section>
+
+  <section class="p-6 fade-in">
+    <h2 class="text-xl font-semibold mb-2">Certifications</h2>
+    <p class="mb-2 text-gray-600">You can view/download certificates here:</p>
+    <ul class="space-y-2">
+      <li>
+        <a target="_blank" href="https://drive.google.com/file/d/1H63ruvLn5HhIQS9J2IsgsNwgH_65INJo/view?usp=sharing"
+           class="text-blue-600 hover:text-blue-800 transition">
+           ➤ Programming in Java – Certificate
+        </a>
+      </li>
+      <!-- Add more here -->
+    </ul>
+  </section>
+
+  <section class="p-6 fade-in">
+    <h2 class="text-xl font-semibold mb-2">Education</h2>
+    <ul class="list-disc list-inside">
+      <li><strong>Sathyabama University</strong>, B.E. in CSE (2022 – 2026) – CGPA: 7.74</li>
+      <li><strong>Velammal Vidyalaya (Annexure)</strong>, HSC CBSE (2021 – 2022) – 76.1%</li>
+      <li><strong>Narayana E Techno School</strong>, SSLC CBSE (2020) – 71.2%</li>
+    </ul>
+  </section>
+
+  <section class="p-6 fade-in">
+    <h2 class="text-xl font-semibold mb-2">Contact</h2>
+    <p>Email: <a href="mailto:madhaeswaranm@gmail.com" class="text-blue-600">madhaeswaranm@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/madhaes" class="text-blue-600">github.com/madhaes</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/madhaes10" class="text-blue-600">linkedin.com/in/madhaes10</a></p>
+  </section>
+
+  <script>
+    // Fade-in animation when scrolling
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
